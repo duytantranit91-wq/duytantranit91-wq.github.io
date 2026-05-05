@@ -1,1 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Use — Period Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rose: #9F72FF;
+      --rose-light: #DDD0FF;
+      --rose-pale: #F5F0FF;
+      --rose-deep: #7340D4;
+      --plum: #4A1E8A;
+      --cream: #FAF8FF;
+      --ink: #0E0A1C;
+      --muted: #5E507A;
+      --border: #DDD0F5;
+      --white: #ffffff;
+      --green-pale: #F6FBF7;
+      --green: #5BA871;
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #2D1060 0%, #7340D4 55%, #9F72FF 100%);
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 20% 40%, rgba(255,255,255,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 80% 70%, rgba(255,255,255,.06) 0%, transparent 70%);
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--rose-light);
+      letter-spacing: .04em;
+      margin-bottom: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .header-badge .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--rose-light);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.75); }
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--white);
+      font-weight: 400;
+      letter-spacing: -.01em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--rose-light);
+    }
+
+    header .subtitle {
+      color: rgba(255,255,255,.7);
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .deco {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .deco-1 { width: 280px; height: 280px; top: -80px; left: -60px; }
+    .deco-2 { width: 180px; height: 180px; bottom: -50px; right: -30px; }
+    .deco-3 { width: 90px; height: 90px; top: 30px; right: 120px; }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── UPDATED BANNER ── */
+    .updated-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin: 32px 0 0;
+      font-weight: 500;
+    }
+    .updated-banner span { color: var(--rose); }
+
+    /* ── TOC ── */
+    .toc-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 36px;
+      margin: 36px 0;
+      box-shadow: 0 2px 20px rgba(159,114,255,.06);
+    }
+
+    .toc-card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--rose-deep);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toc-card h2::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--rose);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 32px;
+    }
+
+    @media (max-width: 560px) {
+      .toc-list { grid-template-columns: 1fr; }
+    }
+
+    .toc-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .toc-list a:hover { color: var(--rose); }
+    .toc-list a .num {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--rose-light);
+      min-width: 24px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-bottom: 52px;
+      animation: fadeUp .5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--rose-light);
+      flex-shrink: 0;
+      min-width: 48px;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--plum);
+      line-height: 1.25;
+      padding-top: 8px;
+    }
+
+    /* ── SUBSECTIONS ── */
+    .subsection { margin: 20px 0; }
+
+    .subsection-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--rose-deep);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .subsection-title::before {
+      content: '';
+      display: block;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--rose);
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── LISTS ── */
+    .policy-list {
+      list-style: none;
+      margin: 12px 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .policy-list li::before {
+      content: '✦';
+      color: var(--rose);
+      flex-shrink: 0;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    /* forbidden list — red tint */
+    .forbidden-list {
+      list-style: none;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #F8F5FF;
+      border: 1px solid #CABFEE;
+      border-radius: 14px;
+      padding: 20px 24px;
+    }
+
+    .forbidden-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+
+    .forbidden-list li::before {
+      content: '✕';
+      color: #7340D4;
+      flex-shrink: 0;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    /* ── BOXES ── */
+    .highlight-box {
+      background: var(--rose-pale);
+      border-left: 3px solid var(--rose);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 14.5px; }
+
+    .warning-box {
+      background: #FFFBF0;
+      border-left: 3px solid #E8A030;
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .warning-box p { margin-bottom: 0; font-size: 14.5px; }
+
+    .green-box {
+      background: var(--green-pale);
+      border-left: 3px solid var(--green);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .green-box p { margin-bottom: 0; font-size: 14.5px; }
+
+    /* ── LINKS ── */
+    a.email {
+      color: var(--rose);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rose-light);
+      transition: border-color .2s;
+    }
+    a.email:hover { border-color: var(--rose); }
+
+    /* ── PILL ── */
+    .pill {
+      display: inline-block;
+      background: var(--rose-pale);
+      color: var(--rose-deep);
+      border-radius: 100px;
+      padding: 3px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      vertical-align: middle;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .contact-card p { margin: 0; font-size: 14px; }
+    .contact-card strong { display: block; color: var(--ink); font-size: 15px; margin-bottom: 4px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13.5px;
+    }
+    footer .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(159,114,255,.4);
+      font-size: 18px;
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+    .back-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(159,114,255,.45);
+    }
+
+    @media (max-width: 600px) {
+      .toc-card { padding: 24px 20px; }
+      .section-num { font-size: 2.2rem; }
+      .section-title { font-size: 1.3rem; }
+      .contact-card { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="deco deco-1"></div>
+  <div class="deco deco-2"></div>
+  <div class="deco deco-3"></div>
+
+  <div class="header-badge"><span class="dot"></span> Official Legal Document</div>
+  <h1>Terms of Use of<br><em>Period Tracker</em></h1>
+  <p class="subtitle">Please read carefully before using our app.</p>
+</header>
+
+<!-- MAIN -->
+<div class="page-wrap">
+
+  <div class="updated-banner" id="top">
+    🗓 Last updated: <span>March 01, 2026</span>
+  </div>
+
+  <!-- INTRO -->
+  <div class="highlight-box" style="margin-top:32px">
+    <p>These Terms of Use ("Terms") describe the terms of usage for <strong>Period Tracker</strong>'s mobile applications, websites, APIs, and services. You accept these Terms by using any part of Period Tracker. If you do not accept these Terms, do not use any part of Period Tracker.</p>
+  </div>
+
+  <div class="warning-box">
+    <p>⚠️ You cannot access or use Period Tracker if you are barred from receiving services under the laws of any applicable jurisdiction, or have previously been suspended or terminated from Period Tracker.</p>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc-card">
+    <h2>Contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1"><span class="num">1</span> Registration &amp; Eligibility</a></li>
+      <li><a href="#s2"><span class="num">2</span> Your Use of the App</a></li>
+      <li><a href="#s3"><span class="num">3</span> Children's Privacy</a></li>
+      <li><a href="#s4"><span class="num">4</span> Limited License to the App</a></li>
+      <li><a href="#s5"><span class="num">5</span> License to User Content</a></li>
+      <li><a href="#s6"><span class="num">6</span> Disclaimer &amp; Liability</a></li>
+      <li><a href="#s7"><span class="num">7</span> Contact Details</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">Registration &amp; Eligibility</div>
+    </div>
+    <p>To use the App, you may be required to create or update an account ("Account") and will be asked to provide certain personal information, which may include your name, gender, birth date, and email address. This information will be held and used in accordance with our <strong>Privacy Policy</strong>. You agree to supply accurate and complete information and to update it promptly after any changes.</p>
+
+    <p>To create an Account and access the App, you must meet the following age requirements:</p>
+    <ul class="policy-list">
+      <li>At least <strong>13 years old</strong> (16 years old in some countries)</li>
+      <li>At least <strong>18 years old</strong> to use the Courses feature</li>
+      <li>Not barred from using the App under applicable law</li>
+    </ul>
+
+    <div class="warning-box">
+      <p>👤 If you are under 18, your parent or guardian must review and accept these Terms. By using the App, you confirm that your parent or guardian has done so. We reserve the right to limit certain content for users under 18, at our sole discretion.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">Your Use of the App</div>
+    </div>
+    <p>Any content you submit through the App is governed by our Privacy Policy. You are responsible for all activity in connection with the App and must abide by all local, state, national, and international laws and regulations.</p>
+
+    <p>The following actions are <strong>strictly prohibited</strong> and will constitute a material breach of these Terms, immediately terminating your license to use the App:</p>
+
+    <ul class="forbidden-list">
+      <li>Resell, rent, lease, loan, sublicense, distribute, or otherwise transfer rights to the App</li>
+      <li>Modify, reverse engineer, decompile, or disassemble the App</li>
+      <li>Copy, adapt, alter, translate, or create derivative works of the App without written authorization</li>
+      <li>Permit other individuals to use the App via a shared network connection, except as allowed under these Terms</li>
+      <li>Circumvent or disable any technological features protecting intellectual property rights</li>
+      <li>Use the App to circumvent copyright protections on any content file or work</li>
+      <li>Use or access the App to compile data usable by a competitive product or service</li>
+      <li>Use your Account to advertise, solicit, or transmit commercial advertisements, chain letters, or junk email</li>
+      <li>Use your Account to engage in any illegal conduct</li>
+      <li>Upload communications that infringe or violate the rights of any party</li>
+      <li>Upload content containing hate speech, abuse, offensive images, obscenity, pornography, or sexually explicit material</li>
+      <li>Upload material containing software viruses or code designed to interrupt, destroy, or limit any computer software</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">Children's Privacy</div>
+    </div>
+    <div class="highlight-box">
+      <p>We are committed to protecting the privacy of children. Period Tracker is <strong>not intended or designed to attract children under the age of 13</strong>. We do not knowingly collect personally identifiable information from any child under the age of 13.</p>
+    </div>
+    <p style="margin-top:16px">If you are an EU resident, you must be at least <span class="pill">16 years old</span> to use the App. To the extent prohibited by applicable law, we do not allow use of the App by EU residents younger than 16 years old.</p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Limited License to the App</div>
+    </div>
+    <div class="green-box">
+      <p>We grant you a <strong>personal, worldwide, revocable, non-transferable, and non-exclusive license</strong> to access and use the App for personal and non-commercial purposes in accordance with these Terms.</p>
+    </div>
+    <p style="margin-top:16px">All rights, title, and interest in and to the App not expressly granted in these Terms are reserved. If you wish to use our software, trademarks, logos, domain name, or other brand features, you must obtain written permission. Permission requests may be sent to <a class="email" href="/cdn-cgi/l/email-protection#94e7e1e4e4fbe6e0d4f9f5fdf8bae4fdfafff6fde6f0baf7fb"><span class="__cf_email__" data-cfemail="d9aaaca9a9b6abad99b4b8b0b5f7a9b0b7b2bbb0abbdf7bab6">[email&#160;protected]</span></a>.</p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">License to User Content</div>
+    </div>
+    <p>The App enables you to input personal notes, share stories, and log certain information ("User Content"). You retain all rights to such User Content that you post, share, or log in the App.</p>
+
+    <p>By providing User Content to the App, you:</p>
+    <ul class="policy-list">
+      <li>Grant Period Tracker a <strong>non-exclusive, transferable, sublicensable, worldwide, royalty-free license</strong> to use, copy, modify, publicly display, distribute, and create derivative works from your User Content in connection with operating the App and for promotional purposes, subject to the Privacy Policy.</li>
+      <li>Agree to indemnify Period Tracker and its affiliates, directors, officers, and employees from any claims and expenses, including attorneys' fees, arising from your User Content or failure to comply with these Terms.</li>
+    </ul>
+
+    <div class="warning-box">
+      <p>⚠️ Period Tracker reserves the right to review all User Content prior to submission and to remove any content for any reason, at any time, without prior notice, at our sole discretion.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Disclaimer &amp; Limitation of Liability</div>
+    </div>
+
+    <div class="warning-box">
+      <p>⚠️ You use Period Tracker <strong>at your own risk</strong>. The App is provided "AS IS" without any warranties. Period Tracker does not warrant that the App or its availability will be uninterrupted or error-free.</p>
+    </div>
+
+    <p style="margin-top:16px">Period Tracker does not assume responsibility for errors or omissions in information, software, or documents referenced or linked within the App. Links to third-party websites are provided "AS IS" without any warranty.</p>
+
+    <div class="highlight-box">
+      <p>🩺 <strong>Period Tracker is not a medical organization</strong> and will not provide medical advice or diagnosis. The App is solely intended to help users track menstrual cycles, body signals, and moods. You are responsible for your own health.</p>
+    </div>
+
+    <p style="margin-top:16px">Period Tracker is not responsible for any personal injury or other damages — direct or indirect — resulting from any use or misuse of the App.</p>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">Contact Details</div>
+    </div>
+    <p>For further information, inquiries, or assistance, you may contact Period Tracker. Customer Service is available through our website and in our apps. Support channels may differ from time to time.</p>
+
+    <div class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <strong>Email Support</strong>
+        <p>Reach our team directly at <a class="email" href="/cdn-cgi/l/email-protection#bdcec8cdcdd2cfc9fdd0dcd4d193cdd4d3d6dfd4cfd993ded2"><span class="__cf_email__" data-cfemail="92e1e7e2e2fde0e6d2fff3fbfebce2fbfcf9f0fbe0f6bcf1fd">[email&#160;protected]</span></a></p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Period Tracker</div>
+  <p>© 2026 Period Tracker. All rights reserved.</p>
+  <p style="margin-top:6px">By using Period Tracker, you agree to these Terms of Use.</p>
+</footer>
+
+<a href="#top" class="back-top" title="Back to top">↑</a>
+
+</body>
+</html>

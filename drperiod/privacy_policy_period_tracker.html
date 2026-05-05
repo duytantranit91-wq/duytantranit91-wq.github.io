@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Period Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rose: #9F72FF;
+      --rose-light: #DDD0FF;
+      --rose-pale: #F5F0FF;
+      --rose-deep: #7340D4;
+      --plum: #4A1E8A;
+      --cream: #FAF8FF;
+      --ink: #0E0A1C;
+      --muted: #5E507A;
+      --border: #DDD0F5;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #2D1060 0%, #7340D4 55%, #9F72FF 100%);
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 20% 40%, rgba(255,255,255,.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 80% 70%, rgba(255,255,255,.06) 0%, transparent 70%);
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--rose-light);
+      letter-spacing: .04em;
+      margin-bottom: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .header-badge .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--rose-light);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.75); }
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: var(--white);
+      font-weight: 400;
+      letter-spacing: -.01em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--rose-light);
+    }
+
+    header .subtitle {
+      color: rgba(255,255,255,.7);
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    /* decorative circles */
+    .deco {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .deco-1 { width: 280px; height: 280px; top: -80px; left: -60px; }
+    .deco-2 { width: 180px; height: 180px; bottom: -50px; right: -30px; }
+    .deco-3 { width: 90px; height: 90px; top: 30px; right: 120px; }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 36px;
+      margin: 48px 0;
+      box-shadow: 0 2px 20px rgba(159,114,255,.06);
+    }
+
+    .toc-card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--rose-deep);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toc-card h2::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--rose);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 32px;
+    }
+
+    @media (max-width: 560px) {
+      .toc-list { grid-template-columns: 1fr; }
+    }
+
+    .toc-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .toc-list a:hover { color: var(--rose); }
+
+    .toc-list a .num {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--rose-light);
+      min-width: 24px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-bottom: 52px;
+      animation: fadeUp .5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--rose-light);
+      flex-shrink: 0;
+      min-width: 48px;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--plum);
+      line-height: 1.25;
+      padding-top: 8px;
+    }
+
+    /* ── SUBSECTIONS ── */
+    .subsection {
+      margin: 24px 0;
+    }
+
+    .subsection-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--rose-deep);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .subsection-title::before {
+      content: '';
+      display: block;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--rose);
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── LISTS ── */
+    .policy-list {
+      list-style: none;
+      margin: 12px 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .policy-list li::before {
+      content: '✦';
+      color: var(--rose);
+      flex-shrink: 0;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    /* ── HIGHLIGHT BOXES ── */
+    .highlight-box {
+      background: var(--rose-pale);
+      border-left: 3px solid var(--rose);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p { margin-bottom: 0; font-size: 14.5px; }
+
+    .not-collected-box {
+      background: #F6FBF7;
+      border-left: 3px solid #5BA871;
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .not-collected-box p { margin-bottom: 0; }
+
+    /* ── EMAIL LINK ── */
+    a.email {
+      color: var(--rose);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rose-light);
+      transition: border-color .2s;
+    }
+    a.email:hover { border-color: var(--rose); }
+
+    /* ── PILL TAG ── */
+    .pill {
+      display: inline-block;
+      background: var(--rose-pale);
+      color: var(--rose-deep);
+      border-radius: 100px;
+      padding: 3px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      vertical-align: middle;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13.5px;
+    }
+
+    footer strong {
+      color: var(--rose-light);
+      font-weight: 500;
+    }
+
+    footer .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    /* ── UPDATED BANNER ── */
+    .updated-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+      margin: 32px 0 0;
+      font-weight: 500;
+    }
+
+    .updated-banner span { color: var(--rose); }
+
+    /* ── STICKY TOC dot ── */
+    .back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(159,114,255,.4);
+      font-size: 18px;
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+    }
+
+    .back-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(159,114,255,.45);
+    }
+
+    @media (max-width: 600px) {
+      .toc-card { padding: 24px 20px; }
+      .section-num { font-size: 2.2rem; }
+      .section-title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="deco deco-1"></div>
+  <div class="deco deco-2"></div>
+  <div class="deco deco-3"></div>
+
+  <div class="header-badge"><span class="dot"></span> Official Legal Document</div>
+  <h1>Privacy Policy of<br><em>Period Tracker</em></h1>
+  <p class="subtitle">Protecting your most personal data — always.</p>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="page-wrap">
+
+  <div class="updated-banner">
+    🗓 Last updated: <span>March 01, 2026</span>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc-card" id="top">
+    <h2>Contents</h2>
+    <ol class="toc-list">
+      <li><a href="#s1"><span class="num">1</span> Collection of Data</a></li>
+      <li><a href="#s2"><span class="num">2</span> Use of Data</a></li>
+      <li><a href="#s3"><span class="num">3</span> Security Measures</a></li>
+      <li><a href="#s4"><span class="num">4</span> Data Retention</a></li>
+      <li><a href="#s5"><span class="num">5</span> Right to Be Forgotten</a></li>
+      <li><a href="#s6"><span class="num">6</span> Disclosure Orders & GDPR</a></li>
+      <li><a href="#s7"><span class="num">7</span> Children's Privacy</a></li>
+      <li><a href="#s8"><span class="num">8</span> Access & Correction</a></li>
+      <li><a href="#s9"><span class="num">9</span> Breach Notification</a></li>
+      <li><a href="#s10"><span class="num">10</span> Changes & Governing Law</a></li>
+    </ol>
+  </div>
+
+  <div class="highlight-box">
+    <p>We, <strong>Hangzhou AtlasV Technology Co., Ltd.</strong> and its affiliates, are committed to protecting your privacy. We limit the collection of your data — we only collect data that is required to maintain <strong>Period Tracker</strong>. This Privacy Policy does not apply to data you send and/or receive from third-party websites you may process through Period Tracker.</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">Collection of Data</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">1.1 Data We Do Not Collect</div>
+      <div class="not-collected-box">
+        <p>We do <strong>not</strong> collect the following data:</p>
+      </div>
+      <ul class="policy-list">
+        <li>Names (including subscriber names, user names, and screen names)</li>
+        <li>Addresses (including mailing, residential, and business addresses)</li>
+        <li>Telephone numbers</li>
+        <li>Payment details — we do not collect or store credit card numbers, bank account numbers, or billing records</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">1.2 Data We Collect</div>
+      <p>We only collect data that is required to maintain Period Tracker.</p>
+
+      <div class="subsection-title" style="margin-top:18px">1.2.1 Data That You Give Us</div>
+      <p>We collect data you provide through your interaction with Period Tracker. If you contact us directly, we may receive data such as your email address and the content of your message.</p>
+      <p>We use your email to:</p>
+      <ul class="policy-list">
+        <li>Communicate with you</li>
+        <li>Send you updates and announcements</li>
+        <li>Send marketing information such as offers, surveys, and invitations</li>
+      </ul>
+      <p>You may withdraw your consent to our use of your email address at any time.</p>
+
+      <div class="subsection-title" style="margin-top:18px">1.2.2 Data Necessary to Maintain Quality</div>
+      <ul class="policy-list">
+        <li><strong>App version data</strong> — helps us efficiently identify and eliminate technical issues you may face.</li>
+        <li><strong>Health &amp; sensitive data</strong> — such as body measurements, dates of past and current periods, and symptoms or events you track (e.g. sex, productivity levels, pain, or cravings). This data is used exclusively to provide our services to you.</li>
+        <li><strong>Social sign-in data</strong> — if you sign up via Facebook/Google, we collect your basic profile info (name, email, profile picture) under the terms of their respective privacy policies. You may control this in your Facebook/Google account settings.</li>
+        <li><strong>Anonymous diagnostic data</strong> — anonymized crash reports, network failures, and service diagnostics to operate Period Tracker reliably.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">Use of Data</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">2.1 Security</div>
+      <p>We authenticate your use of Period Tracker by assigning a unique identifier to your device — without reference to any other personal data. We do not use other forms of your data to verify your identity.</p>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">2.2 System Diagnostics</div>
+      <p>We use your usage data for troubleshooting, data analysis, and activity trend analysis to maintain Period Tracker's reliability.</p>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">2.3 Customer Support</div>
+      <p>We use your data to resolve customer support issues, improve our responses, answer questions, and communicate updates and promotional information.</p>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">2.4 Research &amp; Development</div>
+      <p>We analyze usage patterns to develop new features, services, and improvements to Period Tracker.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">Security Measures</div>
+    </div>
+    <div class="highlight-box">
+      <p>We implement robust security measures to protect your data from unauthorized access, disclosure, modification, or similar risks. Our staff's access to your data is restricted to a <strong>need-to-know basis</strong>. We do <strong>not</strong> collect or store any traffic data or personal data in our data centers.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Data Retention</div>
+    </div>
+    <p>We retain your data only while we have an ongoing legitimate business need — such as providing a requested service or complying with legal requirements.</p>
+    <p>When there is no ongoing need, we will delete or anonymize it. If deletion is temporarily not possible (e.g. backup archives), the data will be securely stored and isolated until it can be deleted.</p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">Right to Be Forgotten</div>
+    </div>
+    <p>We will erase your data when:</p>
+    <ul class="policy-list">
+      <li>Your data is no longer necessary for the purpose it was collected</li>
+      <li>You withdraw your consent and we are relying on that consent as the legal basis for processing</li>
+      <li>You object to processing and there is no overriding legitimate interest to continue</li>
+      <li>We are processing your data for direct marketing and you object to that processing</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Orders Compelling Disclosure &amp; GDPR</div>
+    </div>
+    <p>Our data collection is limited — we do not collect IP addresses, browsing history, traffic data, or DNS queries. We may be compelled to disclose your data only under a valid court order enforceable in Singapore, or where legally required. Recipients must protect your data to a standard at least equivalent to Singapore's <span class="pill">PDPA</span>.</p>
+
+    <div class="subsection" style="margin-top:28px">
+      <div class="subsection-title">6.1 GDPR</div>
+      <p>For users in the EU, we process data under the following legal bases:</p>
+      <ul class="policy-list">
+        <li>Fulfilling contractual obligations: providing services, managing subscriptions, and customer support</li>
+        <li>Legitimate interests: improving service quality and communicating with users</li>
+      </ul>
+      <p>You may withdraw consent at any time, opt out of marketing via the "unsubscribe" link in our emails, and exercise your rights to access, transfer, correct, or delete your data by contacting us at <a class="email" href="/cdn-cgi/l/email-protection#f19d9496909db190859d908287df929e9c"><span class="__cf_email__" data-cfemail="721e1715131e3213061e1301045c111d1f">[email&#160;protected]</span></a>.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">Children's Privacy</div>
+    </div>
+    <div class="highlight-box">
+      <p>We do not offer Period Tracker to children. If you are under <strong>13 years old</strong>, you may only use Period Tracker with the consent, involvement, and supervision of a parent or guardian.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 8 -->
+  <section id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title">Access &amp; Correction</div>
+    </div>
+    <p>You may request access to or correction of your personal data by emailing <a class="email" href="/cdn-cgi/l/email-protection#bdd1d8dadcd1fddcc9d1dccecb93ded2d0"><span class="__cf_email__" data-cfemail="d8b4bdbfb9b498b9acb4b9abaef6bbb7b5">[email&#160;protected]</span></a>. We may verify your identity before processing any request. Upon approval, we will provide your data or make corrections as soon as practicable.</p>
+  </section>
+
+  <!-- SECTION 9 -->
+  <section id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title">Breach Notification</div>
+    </div>
+    <p>We will report serious data breaches to the relevant supervisory authority to ensure your data is protected.</p>
+  </section>
+
+  <!-- SECTION 10 -->
+  <section id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title">Changes, Governing Law &amp; Contact</div>
+    </div>
+    <p>This Privacy Policy may be updated from time to time to ensure compliance with applicable laws. Your continued use of Period Tracker constitutes acceptance of the current policy. Material changes will be communicated via the app, email, or other channels.</p>
+    <p>This Privacy Policy is governed by the laws of the <strong>Republic of Singapore</strong>.</p>
+
+    <div class="highlight-box" style="margin-top:24px">
+      <p>For any questions or requests, contact us at <a class="email" href="/cdn-cgi/l/email-protection#cda1a8aaaca18dacb9a1acbebbe3aea2a0"><span class="__cf_email__" data-cfemail="1f737a787e735f7e6b737e6c69317c7072">[email&#160;protected]</a>
+    </div>
+  </section>
+
+</div><!-- /page-wrap -->
+
+<footer>
+  <div class="footer-logo">Period Tracker</div>
+  <p>© 2026 Period Tracker. All rights reserved.</p>
+  <p style="margin-top:6px">Governed by the laws of the Republic of Singapore.</p>
+</footer>
+
+<a href="#top" class="back-top" title="Back to top">↑</a>
+
+</body>
+</html>
