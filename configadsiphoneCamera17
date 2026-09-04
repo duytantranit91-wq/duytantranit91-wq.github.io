@@ -1,0 +1,23 @@
+{
+  "time_limit_inter": 45,
+  "native_ads_config": {
+    "native_enabled": false,
+    "native_300_welcome": false,
+    "native_300_mainintro_1": false,
+    "native_300_mainintro_2": false,
+    "native_300_mainintro_3": false,
+    "native_full_mainintro_1": false,
+    "native_full_mainintro_2": false,
+    "native_300_tiptouse": false,
+    "native_300_language": false,
+    "native_home": false,
+    "inter_mainintro": false,
+    "banner_view": false,
+    "show_click_inter": 5
+  },
+  "check_live": {
+    "stt": false,
+    "pkgname_new": "com.google.android.GoogleCamera",
+    "transfer_msg": "The app has moved to a new version. Please install the new app to continue."
+  }
+}
