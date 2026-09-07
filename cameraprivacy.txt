@@ -1,0 +1,147 @@
+PRIVACY POLICY
+
+Last updated: September 7, 2026
+
+This Privacy Policy applies to the mobile application “Camera iphone - OS 26 Camera” (package name: com.camera.iphone.camera17), developed and published by TDT Soft Ltd. (“we,” “us,” or “our”).
+
+This Privacy Policy explains what information may be collected when you use the application, how that information is used and shared, and the choices available to you.
+
+1. Information We Collect
+
+1.1. Camera and media files
+
+The application may request permission to access your device’s camera so that you can take photos and use camera-related features.
+
+The application may also request access to photos, videos, or media files when necessary to allow you to:
+
+* View or select photos and videos;
+* Save photos and videos created with the application;
+* Edit or manage selected media files;
+* Use other features initiated by you.
+
+Photos and videos are processed locally on your device unless a feature clearly informs you otherwise. We do not upload your photos or videos to our servers without your knowledge and action.
+
+You can manage or revoke these permissions at any time through your device settings. Some application features may not work correctly if the required permissions are denied.
+
+1.2. Device, usage, and diagnostic information
+
+The application and third-party services integrated into it may automatically collect limited technical information, including:
+
+* Device type and model;
+* Operating system and application version;
+* Language and general regional settings;
+* Network connection type;
+* Application interactions and usage events;
+* Crash reports, performance data, and diagnostic information;
+* Advertising identifiers, where permitted by applicable law and your device settings;
+* Approximate location inferred from an IP address, where used by advertising or analytics providers.
+
+We do not intentionally collect hardware identifiers such as your IMEI or MAC address.
+
+1.3. Information you provide
+
+If you contact us for support, we may receive your email address, the content of your message, and any information or attachments you voluntarily provide.
+
+2. How We Use Information
+
+We may use the information described above to:
+
+* Provide and maintain the application’s features;
+* Enable camera, photo, video, and media-related functions;
+* Save content at your request;
+* Diagnose crashes and technical problems;
+* Improve application performance, stability, and user experience;
+* Respond to questions and support requests;
+* Prevent fraud, abuse, and security threats;
+* Display, measure, and improve advertising;
+* Comply with applicable laws and legal obligations.
+
+We do not sell your personal information.
+
+3. Advertising and Third-Party Services
+
+The application may use third-party services for advertising, analytics, crash reporting, and application performance. These providers may collect and process limited device, usage, diagnostic, and advertising information according to their own privacy policies.
+
+Third-party services used by the application may include Google services such as:
+
+* Google AdMob;
+* Google Play services;
+* Firebase Analytics;
+* Firebase Crashlytics;
+* Firebase Remote Config.
+
+For more information about how Google processes data, please review:
+
+https://policies.google.com/privacy
+
+Information collected by third-party providers is governed by their respective privacy policies and terms. We encourage you to review those policies.
+
+You may control certain personalized advertising options through your device’s privacy or advertising settings.
+
+4. Sharing of Information
+
+We may share limited information only in the following circumstances:
+
+* With service providers that help us operate, analyze, secure, or monetize the application;
+* When required by law, regulation, legal process, or a valid governmental request;
+* To protect the rights, safety, and security of users, the public, TDT Soft Ltd., or the application;
+* In connection with a merger, acquisition, restructuring, or transfer of assets, subject to applicable legal requirements;
+* With your consent or at your direction.
+
+Service providers may process information only for the purposes of providing their services and according to their own privacy policies and applicable laws.
+
+5. Data Retention
+
+Photos and videos created or edited with the application remain on your device until you delete them, uninstall the application, or remove them using your device’s file or media-management tools.
+
+Information received through a support request is retained only for as long as reasonably necessary to respond to the request, resolve disputes, comply with legal obligations, and protect our legitimate interests.
+
+Third-party providers may retain information according to their own retention policies.
+
+6. Data Security
+
+We use reasonable administrative and technical safeguards designed to protect information against unauthorized access, loss, misuse, alteration, or disclosure.
+
+However, no electronic storage or transmission method is completely secure, and we cannot guarantee absolute security.
+
+7. Children’s Privacy
+
+The application is not directed to children under the age of 13, or the minimum age required by applicable law in the user’s country.
+
+We do not knowingly collect personal information directly from children. If you are a parent or legal guardian and believe that a child has provided personal information to us, please contact us. We will take reasonable steps to investigate and delete the information when required.
+
+8. Your Rights and Choices
+
+Depending on your location, you may have the right to:
+
+* Request access to personal information we hold about you;
+* Request correction or deletion of your personal information;
+* Object to or restrict certain processing;
+* Withdraw consent where processing is based on consent;
+* Request data portability where applicable;
+* Submit a complaint to the relevant data-protection authority.
+
+Most application data, including photos and videos, is stored locally on your device and can be deleted directly through the application or your device.
+
+The application does not require users to create an account. If you want to submit a privacy or deletion request concerning information you provided through a support request, contact us using the email address below.
+
+We may need to verify your request before completing it. These rights may be limited where an exception under applicable law applies.
+
+9. International Data Transfers
+
+Third-party providers may process information in countries other than the country where you live. When required, those providers are responsible for using appropriate safeguards for international data transfers in accordance with applicable law.
+
+10. Changes to This Privacy Policy
+
+We may update this Privacy Policy periodically to reflect changes to the application, third-party services, or applicable legal requirements.
+
+Any changes will be published on this page with an updated “Last updated” date. We encourage you to review this Privacy Policy periodically.
+
+11. Contact Us
+
+If you have questions, concerns, or requests regarding this Privacy Policy, please contact:
+
+Developer: TDT Soft Ltd.
+Application: Camera iphone - OS 26 Camera
+Package name: com.camera.iphone.camera17
+Email: [duytantranit91@gmail.com](mailto:duytantranit91@gmail.com)
